@@ -19,7 +19,7 @@ function convertAnswer(answer) {
 }
 
 function addScore(agent) {
-  agent += 1;
+  agent === playerScore ? (playerScore += 1) : (computerScore += 1);
 }
 
 function getPlayerChoice() {
