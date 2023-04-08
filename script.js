@@ -6,6 +6,10 @@ function getComputerChoice() {
   return choice[Math.floor(Math.random() * choice.length)];
 }
 
+function showScores() {
+  console.log(`Player score: ${playerScore} Computer score: ${computerScore}`);
+}
+
 function convertAnswer(answer) {
   if (answer === "1") {
     return "rock";
