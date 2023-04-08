@@ -1,6 +1,10 @@
 let computerScore = 0;
 let playerScore = 0;
 
+function cl(message) {
+  console.log(message);
+}
+
 function getComputerChoice() {
   const choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
