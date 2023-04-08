@@ -74,3 +74,10 @@ function playRound(playerSelection, computerSelection) {
     return "You lose. Rock beats scissors.";
   }
 }
+
+function game() {
+  for (let index = 0; index < 5; index++) {
+    console.log(playRound(getPlayerChoice(), getComputerChoice()));
+    showScores();
+  }
+}
