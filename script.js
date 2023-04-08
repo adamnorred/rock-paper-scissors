@@ -23,6 +23,37 @@ function getPlayerChoice() {
     );
     if (answer === "1" || answer === "2" || answer === "3") {
       return convertAnswer(answer);
-    } else alert("wrong input");
+    }
+    alert("wrong input");
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === "rock" && computerSelection === "rock") {
+    return "It is a tie";
+  }
+  if (playerSelection === "rock" && computerSelection === "paper") {
+    return "You lose. Paper beats rock.";
+  }
+  if (playerSelection === "rock" && computerSelection === "scissors") {
+    return "You win. Rock beats scissors.";
+  }
+  if (playerSelection === "paper" && computerSelection === "paper") {
+    return "It is a tie";
+  }
+  if (playerSelection === "paper" && computerSelection === "rock") {
+    return "You win. Paper beats rock.";
+  }
+  if (playerSelection === "paper" && computerSelection === "scissors") {
+    return "You lose. Scissors beat paper.";
+  }
+  if (playerSelection === "scissors" && computerSelection === "scissors") {
+    return "It is a tie";
+  }
+  if (playerSelection === "scissors" && computerSelection === "paper") {
+    return "You win. Scissors beat paper.";
+  }
+  if (playerSelection === "scissors" && computerSelection === "rock") {
+    return "You lose. Rock beats scissors.";
   }
 }
