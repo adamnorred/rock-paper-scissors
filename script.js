@@ -11,7 +11,7 @@ function getComputerChoice() {
 }
 
 function showScores() {
-  console.log(`Player score: ${playerScore} Computer score: ${computerScore}`);
+  cl(`Player score: ${playerScore} Computer score: ${computerScore}`);
 }
 
 function convertAnswer(answer) {
@@ -45,70 +45,52 @@ function getPlayerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "rock") {
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "It is a tie";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("It is a tie");
   }
   if (playerSelection === "rock" && computerSelection === "paper") {
     addScore(computerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You lose. Paper beats rock.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You lose. Paper beats rock.");
   }
   if (playerSelection === "rock" && computerSelection === "scissors") {
     addScore(playerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You win. Rock beats scissors.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You win. Rock beats scissors.");
   }
   if (playerSelection === "paper" && computerSelection === "paper") {
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "It is a tie";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("It is a tie");
   }
   if (playerSelection === "paper" && computerSelection === "rock") {
     addScore(playerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You win. Paper beats rock.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You win. Paper beats rock.");
   }
   if (playerSelection === "paper" && computerSelection === "scissors") {
     addScore(computerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You lose. Scissors beat paper.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You lose. Scissors beat paper.");
   }
   if (playerSelection === "scissors" && computerSelection === "scissors") {
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "It is a tie";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("It is a tie");
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
     addScore(playerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You win. Scissors beat paper.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You win. Scissors beat paper.");
   }
   if (playerSelection === "scissors" && computerSelection === "rock") {
     addScore(computerScore);
-    console.log(
-      `You choose: ${playerSelection} Computer choose: ${computerSelection}`
-    );
-    return "You lose. Rock beats scissors.";
+    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
+    cl("You lose. Rock beats scissors.");
   }
 }
 
 function game() {
   for (let index = 0; index < 5; index++) {
-    console.log(playRound(getPlayerChoice(), getComputerChoice()));
+    playRound(getPlayerChoice(), getComputerChoice());
     showScores();
   }
 }
