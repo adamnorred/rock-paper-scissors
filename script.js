@@ -1,3 +1,6 @@
+let computerScore = 0;
+let playerScore = 0;
+
 function getComputerChoice() {
   const choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
@@ -13,6 +16,10 @@ function convertAnswer(answer) {
   if (answer === "3") {
     return "scissors";
   }
+}
+
+function addScore(agent) {
+  agent += 1;
 }
 
 function getPlayerChoice() {
@@ -33,27 +40,33 @@ function playRound(playerSelection, computerSelection) {
     return "It is a tie";
   }
   if (playerSelection === "rock" && computerSelection === "paper") {
+    addScore(computerScore);
     return "You lose. Paper beats rock.";
   }
   if (playerSelection === "rock" && computerSelection === "scissors") {
+    addScore(playerScore);
     return "You win. Rock beats scissors.";
   }
   if (playerSelection === "paper" && computerSelection === "paper") {
     return "It is a tie";
   }
   if (playerSelection === "paper" && computerSelection === "rock") {
+    addScore(playerScore);
     return "You win. Paper beats rock.";
   }
   if (playerSelection === "paper" && computerSelection === "scissors") {
+    addScore(computerScore);
     return "You lose. Scissors beat paper.";
   }
   if (playerSelection === "scissors" && computerSelection === "scissors") {
     return "It is a tie";
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
+    addScore(playerScore);
     return "You win. Scissors beat paper.";
   }
   if (playerSelection === "scissors" && computerSelection === "rock") {
+    addScore(computerScore);
     return "You lose. Rock beats scissors.";
   }
 }
