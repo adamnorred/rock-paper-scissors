@@ -47,33 +47,27 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("It is a tie");
-  }
-  if (playerSelection === "rock" && computerSelection === "paper") {
+  } else if (playerSelection === "rock" && computerSelection === "paper") {
     addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Paper beats rock.");
-  }
-  if (playerSelection === "rock" && computerSelection === "scissors") {
+  } else if (playerSelection === "rock" && computerSelection === "scissors") {
     addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Rock beats scissors.");
-  }
-  if (playerSelection === "paper" && computerSelection === "rock") {
+  } else if (playerSelection === "paper" && computerSelection === "rock") {
     addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Paper beats rock.");
-  }
-  if (playerSelection === "paper" && computerSelection === "scissors") {
+  } else if (playerSelection === "paper" && computerSelection === "scissors") {
     addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Scissors beat paper.");
-  }
-  if (playerSelection === "scissors" && computerSelection === "paper") {
+  } else if (playerSelection === "scissors" && computerSelection === "paper") {
     addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Scissors beat paper.");
-  }
-  if (playerSelection === "scissors" && computerSelection === "rock") {
+  } else if (playerSelection === "scissors" && computerSelection === "rock") {
     addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Rock beats scissors.");
