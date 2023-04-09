@@ -44,7 +44,7 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "rock" && computerSelection === "rock") {
+  if (playerSelection === computerSelection) {
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("It is a tie");
   }
@@ -58,10 +58,6 @@ function playRound(playerSelection, computerSelection) {
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Rock beats scissors.");
   }
-  if (playerSelection === "paper" && computerSelection === "paper") {
-    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
-    cl("It is a tie");
-  }
   if (playerSelection === "paper" && computerSelection === "rock") {
     addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
@@ -71,10 +67,6 @@ function playRound(playerSelection, computerSelection) {
     addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Scissors beat paper.");
-  }
-  if (playerSelection === "scissors" && computerSelection === "scissors") {
-    cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
-    cl("It is a tie");
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
     addScore(playerScore);
