@@ -27,7 +27,7 @@ function convertAnswer(answer) {
 }
 
 function addScore(agent) {
-  agent === playerScore ? (playerScore += 1) : (computerScore += 1);
+  return (agent += 1);
 }
 
 function getPlayerChoice() {
@@ -48,27 +48,27 @@ function playRound(playerSelection, computerSelection) {
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("It is a tie");
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    addScore(computerScore);
+    computerScore = addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Paper beats rock.");
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    addScore(playerScore);
+    playerScore = addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Rock beats scissors.");
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    addScore(playerScore);
+    playerScore = addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Paper beats rock.");
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    addScore(computerScore);
+    computerScore = addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Scissors beat paper.");
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    addScore(playerScore);
+    playerScore = addScore(playerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You win. Scissors beat paper.");
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    addScore(computerScore);
+    computerScore = addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Rock beats scissors.");
   }
