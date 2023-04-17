@@ -75,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let index = 0; index < 5; index++) {
+  while (true) {
     playRound(getPlayerChoice(), getComputerChoice());
     showScores();
   }
