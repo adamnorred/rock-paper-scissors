@@ -1,0 +1,14 @@
+#container {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.btn-choice {
+    border-style: solid;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+}
