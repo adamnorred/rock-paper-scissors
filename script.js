@@ -11,10 +11,7 @@ const computerScoreDom = document.querySelector("#computer-score");
 const infoTextDom = document.querySelector("#info-text");
 const warTextDom = document.querySelector("#war-text");
 const gameOverTextDom = document.querySelector("#game-over-text");
-
-function cl(message) {
-  console.log(message);
-}
+const btnRestartDom = document.querySelector("#btn-restart");
 
 function updateScoreDom() {
   playerScoreDom.textContent = playerScore;
@@ -61,9 +58,53 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-rock.addEventListener("click", function () {
-  playerChoice = rock.textContent;
+function disableRpsBtns() {
+  rock.removeEventListener("click", game);
+  paper.removeEventListener("click", game);
+  scissors.removeEventListener("click", game);
+}
+
+function enableRpsBtns() {
+  rock.addEventListener("click", game);
+  paper.addEventListener("click", game);
+  scissors.addEventListener("click", game);
+}
+
+function game() {
+  playerChoice = this.textContent;
   computerChoice = getComputerChoice();
   playRound(playerChoice, computerChoice);
   updateScoreDom();
-});
+  if (playerScore === 5) {
+    gameOverTextDom.textContent = "You won the game";
+    gameOverTextDom.style.color = "blue";
+    playerScoreDom.style.color = "blue";
+    disableRpsBtns();
+  } else if (computerScore === 5) {
+    gameOverTextDom.textContent = "You lost the game";
+    gameOverTextDom.style.color = "red";
+    computerScoreDom.style.color = "red";
+    disableRpsBtns();
+  }
+}
+
+function resetGame() {
+  enableRpsBtns();
+  computerScore = 0;
+  playerScore = 0;
+  playerChoice = "";
+  computerChoice = "";
+  playerScoreDom.textContent = "0";
+  computerScoreDom.textContent = "0";
+  infoTextDom.textContent = "Click buttons";
+  warTextDom.textContent = "to play the game!";
+  gameOverTextDom.textContent = "";
+  gameOverTextDom.style.color = "";
+  playerScoreDom.style.color = "";
+  computerScoreDom.style.color = "";
+}
+
+rock.addEventListener("click", game);
+paper.addEventListener("click", game);
+scissors.addEventListener("click", game);
+btnRestartDom.addEventListener("click", resetGame);
