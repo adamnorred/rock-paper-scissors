@@ -7,13 +7,6 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 
-rock.addEventListener("click", function () {
-  playerChoice = rock.textContent;
-  computerChoice = getComputerChoice();
-  playRound(playerChoice, computerChoice);
-  showScores();
-});
-
 function cl(message) {
   console.log(message);
 }
@@ -30,6 +23,8 @@ function showScores() {
 function addScore(agent) {
   return (agent += 1);
 }
+
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -61,3 +56,10 @@ function playRound(playerSelection, computerSelection) {
     cl("You lose. Rock beats scissors.");
   }
 }
+
+rock.addEventListener("click", function () {
+  playerChoice = rock.textContent;
+  computerChoice = getComputerChoice();
+  playRound(playerChoice, computerChoice);
+  showScores();
+});

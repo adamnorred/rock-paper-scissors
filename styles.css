@@ -1,14 +1,36 @@
-#container {
+#container, .container-score-text, .container-score, #container-restart, #container-info-text, #game-over-container {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
   }
+
+#player-score, #computer-score {
+ margin: 10px 50px;
+}
+
+#container {
+    margin: 50px 0px;
+}
 
 .btn-choice {
     border-style: solid;
     margin: 3px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.score-text {
+    margin: 7px;
+}
+
+#btn-restart {
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 0px;
+}
+
+#info-text, #game-over-text {
+    margin: 10px;
 }
