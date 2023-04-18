@@ -4,10 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 #player-score, #computer-score {
- margin: 10px 50px;
+    margin: 10px 50px;
 }
 
 #container {
@@ -25,11 +25,22 @@
     margin: 7px;
 }
 
-#btn-restart {
+.btn-restart {
     border-style: solid;
     border-radius: 5px;
     padding: 5px;
     margin: 20px 0px;
+}
+
+.btn-choice, .btn-restart {
+    transition: all .07s ease;
+}
+
+.trs {
+    transform: scale(0.9);
+    background-color: crimson;
+    color: white;
+    border-color: black;
 }
 
 #info-text, #game-over-text, #war-text {

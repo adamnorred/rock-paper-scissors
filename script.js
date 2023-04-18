@@ -11,7 +11,7 @@ const computerScoreDom = document.querySelector("#computer-score");
 const infoTextDom = document.querySelector("#info-text");
 const warTextDom = document.querySelector("#war-text");
 const gameOverTextDom = document.querySelector("#game-over-text");
-const btnRestartDom = document.querySelector("#btn-restart");
+const btnRestartDom = document.querySelector(".btn-restart");
 
 function updateScoreDom() {
   playerScoreDom.textContent = playerScore;
@@ -71,6 +71,7 @@ function enableRpsBtns() {
 }
 
 function game() {
+  this.classList.add("trs");
   playerChoice = this.textContent;
   computerChoice = getComputerChoice();
   playRound(playerChoice, computerChoice);
@@ -102,9 +103,19 @@ function resetGame() {
   gameOverTextDom.style.color = "";
   playerScoreDom.style.color = "";
   computerScoreDom.style.color = "";
+  this.classList.add("trs");
+}
+
+function resetTransition() {
+  this.classList.remove("trs");
 }
 
 rock.addEventListener("click", game);
 paper.addEventListener("click", game);
 scissors.addEventListener("click", game);
 btnRestartDom.addEventListener("click", resetGame);
+
+rock.addEventListener("transitionend", resetTransition);
+paper.addEventListener("transitionend", resetTransition);
+scissors.addEventListener("transitionend", resetTransition);
+btnRestartDom.addEventListener("transitionend", resetTransition);
