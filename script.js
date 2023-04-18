@@ -1,5 +1,18 @@
 let computerScore = 0;
 let playerScore = 0;
+let playerChoice = "";
+let computerChoice = "";
+
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+rock.addEventListener("click", function () {
+  playerChoice = rock.textContent;
+  computerChoice = getComputerChoice();
+  playRound(playerChoice, computerChoice);
+  showScores();
+});
 
 function cl(message) {
   console.log(message);
@@ -14,33 +27,8 @@ function showScores() {
   cl(`Player score: ${playerScore} Computer score: ${computerScore}`);
 }
 
-function convertAnswer(answer) {
-  if (answer === "1") {
-    return "rock";
-  }
-  if (answer === "2") {
-    return "paper";
-  }
-  if (answer === "3") {
-    return "scissors";
-  }
-}
-
 function addScore(agent) {
   return (agent += 1);
-}
-
-function getPlayerChoice() {
-  let answer;
-  while (true) {
-    answer = prompt(
-      "Choose rock(1)/paper(2)/scissors(3) by typing corresponding number:"
-    );
-    if (answer === "1" || answer === "2" || answer === "3") {
-      return convertAnswer(answer);
-    }
-    alert("wrong input");
-  }
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -71,12 +59,5 @@ function playRound(playerSelection, computerSelection) {
     computerScore = addScore(computerScore);
     cl(`You choose: ${playerSelection} Computer choose: ${computerSelection}`);
     cl("You lose. Rock beats scissors.");
-  }
-}
-
-function game() {
-  while (true) {
-    playRound(getPlayerChoice(), getComputerChoice());
-    showScores();
   }
 }
